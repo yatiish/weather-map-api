@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse navbar-fixed-top nav">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+		  <span>Weather API</span>
+		  </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row top-padding">
+        <%= yield %>
+	  </div>
+	</div>
   </body>
 </html>
