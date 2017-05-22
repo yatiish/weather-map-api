@@ -1,2 +1,44 @@
-<p><%= @abc %></p>
-<p><%= @dfd %></p>
+<% if @weather_details["cod"] == 200%>
+  <div class="col-md-12">
+    <p>Weather Description : <%= @weather_details["weather"][0]["description"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>City : <%= @weather_details["name"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Country : <%= @weather_details["sys"]["country"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Longitude : <%= @weather_details["coord"]["lon"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Latitude : <%= @weather_details["coord"]["lat"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Temparture : <%= @weather_details["main"]["temp"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Pressure : <%= @weather_details["main"]["pressure"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Humidity : <%= @weather_details["main"]["humidity"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Minimum Temperature : <%= @weather_details["main"]["temp_min"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Maximum Temperature : <%= @weather_details["main"]["temp_max"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Visibility : <%= @weather_details["visibility"] %></p>
+  </div>
+  <div class="col-md-12">
+    <p>Wind Speed : <%= @weather_details["wind"]["speed"] %></p>
+  </div>	
+<% else %>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-9">
+    <p> Oops... the city you have entered could not be found. Please recheck and try again by clicking <%= link_to "here", get_coordinates_path %> </p>
+  </div>
+<% end %>
